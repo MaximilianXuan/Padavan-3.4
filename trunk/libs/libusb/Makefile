@@ -3,7 +3,7 @@ SRC_NAME=libusb-0.1.12
 CFLAGS += -Wno-format-truncation
 
 all:	config_test
-	$(MAKE) -C $(SRC_NAME)
+	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
 
 config_test:
 	( if [ -f ./config_done ]; then \
